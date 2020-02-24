@@ -1,0 +1,22 @@
+pipeline {
+      agent any
+      stages {
+            stage('Init') {
+                  steps {
+                        echo 'Hi, this is Jai '
+                        echo 'We are Starting the Testing'
+                  }
+            }
+            stage('Build') {
+                  steps {
+                        echo 'Building Sample Maven Project'
+                  }
+            }
+             stage('Create hello docker Image') {
+                  steps {
+                       sh 'docker build .'
+                  }
+            }
+            
+      }
+}
